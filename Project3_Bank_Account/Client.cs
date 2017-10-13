@@ -28,9 +28,9 @@ namespace Project3_Bank_Account
             this.ssn = ssn;
         }
 
-        public virtual string ClientName()
+        public virtual string ClientInfo()
         {
-            return name;
+            return name + " " + address + " " + ssn;
         }
 
     }

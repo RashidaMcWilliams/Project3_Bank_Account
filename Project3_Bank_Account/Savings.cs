@@ -13,7 +13,7 @@ namespace Project3_Bank_Account
 
         }
 
-        public Savings((string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
+        public Savings(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
         {
             this.acctNumber = acctNumber;
             this.acctBalance = acctBalance;
@@ -22,12 +22,25 @@ namespace Project3_Bank_Account
             this.withdrawAmount = withdrawAmount;
         }
 
-        public override string DisplayBalance()
+        public override void DisplayBalance()
         {
-            return acctType + "\n " + acctNumber + "\n" + base.DisplayBalance();
+            Console.WriteLine(acctType + "\n" + acctNumber);
+            base.DisplayBalance();
         }
 
-
+        public override double Withdraw()
+        {
+            if (acctBalance > withdrawAmount)
+            {
+                return acctBalance - withdrawAmount;
+            }
+            else
+            {
+                return acctBalance;
+                Console.WriteLine("Insufficient funds for a withdrawal.");
+            }
+            
+        }
 
     }
 }

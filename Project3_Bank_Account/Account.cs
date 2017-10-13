@@ -14,9 +14,9 @@ namespace Project3_Bank_Account
         protected double depositAmount;
         protected double withdrawAmount;
 
-        public string AcctNumber { get; }
+        public string AcctNumber { get; set; }
         public double AcctBalance { get; set; }
-        public string AcctType { get; }
+        public string AcctType { get; set; }
         protected double DepositAmount { get; set; }
         protected double WithdrawAmount { get; set; }
 
@@ -25,18 +25,16 @@ namespace Project3_Bank_Account
 
         }
 
-        public Account(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
+        public Account(string acctNumber, double acctBalance, string acctType)
         {
             this.acctNumber = acctNumber;
             this.acctBalance = acctBalance;
             this.acctType = acctType;
-            this.depositAmount = depositAmount;
-            this.withdrawAmount = withdrawAmount;
         }
 
-        public virtual string DisplayBalance()
+        public virtual void DisplayBalance()
         {
-            return "Current balance: " + acctBalance;
+            Console.WriteLine("Current balance: " + acctBalance); 
         }
 
         public virtual double Deposit()
@@ -44,10 +42,7 @@ namespace Project3_Bank_Account
             return acctBalance + depositAmount;
         }
 
-        public virtual double Withdraw()
-        {
-            return acctBalance - withdrawAmount;
-        }
+        public abstract double Withdraw();
 
 
 
