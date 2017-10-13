@@ -10,6 +10,10 @@ namespace Project3_Bank_Account
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Worthington Bank");
+
+            
+
         }
     }
 }
