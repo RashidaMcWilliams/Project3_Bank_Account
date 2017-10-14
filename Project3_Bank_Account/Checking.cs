@@ -22,7 +22,7 @@ namespace Project3_Bank_Account
             this.withdrawAmount = withdrawAmount;
         }
 
-        public override void DisplayBalance()
+        public override double DisplayBalance()
         {
             Console.WriteLine(acctType + "\n " + acctNumber);
             base.DisplayBalance();

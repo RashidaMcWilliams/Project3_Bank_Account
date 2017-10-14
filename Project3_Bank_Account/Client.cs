@@ -12,9 +12,9 @@ namespace Project3_Bank_Account
         private string address;
         private string ssn;
 
-        public string Name { get; }
-        public string Address { get; }
-        public string Ssn { get; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Ssn { get; set; }
 
         public Client()
         {
@@ -30,7 +30,7 @@ namespace Project3_Bank_Account
 
         public virtual string ClientInfo()
         {
-            return name + " " + address + " " + ssn;
+            return name + "\n" + address + "\n" + ssn;
         }
 
     }
