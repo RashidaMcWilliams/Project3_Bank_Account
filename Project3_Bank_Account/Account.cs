@@ -32,9 +32,9 @@ namespace Project3_Bank_Account
             this.acctType = acctType;
         }
 
-        public virtual void DisplayBalance()
+        public virtual double DisplayBalance()
         {
-            Console.WriteLine("Current balance: " + acctBalance); 
+            return acctBalance; 
         }
 
         public virtual double Deposit()

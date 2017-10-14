@@ -36,8 +36,8 @@ namespace Project3_Bank_Account
             }
             else
             {
-                return acctBalance;
                 Console.WriteLine("Insufficient funds for a withdrawal.");
+                return acctBalance;
             }
             
         }

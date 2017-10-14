@@ -23,12 +23,12 @@ namespace Project3_Bank_Account
                 Savings savings = new Savings();
                 savings.AcctType = "Savings";
                 savings.AcctNumber = "345678129";
-                savings.AcctBalance = 2595.00;
+                savings.AcctBalance = 2595.00d;
 
                 Checking checking = new Checking();
                 checking.AcctType = "Checking";
                 checking.AcctNumber = "765923610";
-                checking.AcctBalance = 473.25;
+                checking.AcctBalance = 473.25d;
 
 
                 //intial bank display
@@ -59,7 +59,7 @@ namespace Project3_Bank_Account
                     }
                     else if (userInput == 2)
                     {
-                        Console.WriteLine(savings.AcctBalance);
+                        Console.WriteLine(savings.DisplayBalance());
                     }
                     else
                     {
