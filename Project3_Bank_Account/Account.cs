@@ -13,23 +13,26 @@ namespace Project3_Bank_Account
         protected string acctType;
         protected double depositAmount;
         protected double withdrawAmount;
+        protected double newBalance;
 
         public string AcctNumber { get; set; }
         public double AcctBalance { get; set; }
         public string AcctType { get; set; }
         protected double DepositAmount { get; set; }
         protected double WithdrawAmount { get; set; }
+        protected double NewBalance { get; set; }
 
         public Account()
         {
 
         }
 
-        public Account(string acctNumber, double acctBalance, string acctType)
+        public Account(string acctNumber, double acctBalance, string acctType, double newBalance)
         {
             this.AcctNumber = acctNumber;
             this.AcctBalance = acctBalance;
             this.AcctType = acctType;
+            this.NewBalance = newBalance;
         }
 
         public virtual double DisplayBalance()
@@ -39,11 +42,10 @@ namespace Project3_Bank_Account
 
         public virtual double Deposit()
         {
-            return AcctBalance + DepositAmount;
+            return NewBalance = (AcctBalance + DepositAmount); 
         }
 
         public abstract double Withdraw();
-
 
 
     }

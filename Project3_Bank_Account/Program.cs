@@ -11,11 +11,13 @@ namespace Project3_Bank_Account
         //fields
         protected static double depositAmount;
         protected static double withdrawAmount;
+        private static double newBalance;
         private static int userInput;
         private static string userTrans;
-
+      
         public static double DepositAmount { get; set; }
         public static double WithdrawAmount { get; set; }
+        public static double NewBalance { get; set; }
 
         static void Main(string[] args)
         {
@@ -25,20 +27,19 @@ namespace Project3_Bank_Account
                 //objects
                 Client client = new Client("Khadijah Wilson", "1756 Treetop Drive Savannah, Georgia", "674392108");
 
-                Savings savings = new Savings("345678129", 2595.01d, "Savings", 0.00d, 0.00d);
+                Savings savings = new Savings("345678129", 2595.01d, "Savings", 0.00d, 0.00d, 0.00d);
                 //Savings savings = new Savings();
                 //savings.AcctType = "Savings";
                 //savings.AcctNumber = "345678129";
                 //savings.AcctBalance = 2595.01d;
 
-                //Checking checking = new Checking("765923610", 473.25d, "Checking", 0.00d, 0.00d);
-                Checking checking = new Checking();
-                checking.AcctType = "Checking";
-                checking.AcctNumber = "765923610";
-                checking.AcctBalance = 473.25d;
+                Checking checking = new Checking("765923610", 473.25d, "Checking", 0.00d, 0.00d, 0.00d);
+                //Checking checking = new Checking();
+                //checking.AcctType = "Checking";
+                //checking.AcctNumber = "765923610";
+                //checking.AcctBalance = 473.25d;
                 //checking.DepositAmount = depositAmount;
                 //checking.WithdrawAmount = withdrawAmount;
-
 
                 //intial bank display
                 Console.WriteLine("Welcome to Worthington Bank");
@@ -85,18 +86,21 @@ namespace Project3_Bank_Account
                     Console.WriteLine("Please select an account.");
                     Console.WriteLine("1. Checking");
                     Console.WriteLine("2. Savings");
+                    userInput = int.Parse(Console.ReadLine());
 
                     if (userInput == 1)
                     {
                         Console.WriteLine("Please enter deposit amount.");
                         DepositAmount = Convert.ToDouble(Console.ReadLine());
                         checking.Deposit();
+                        Console.WriteLine(NewBalance);
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter deposit amount.");
                         DepositAmount = Convert.ToDouble(Console.ReadLine());
                         savings.Deposit();
+                        Console.WriteLine(NewBalance);
                     }
                     else
                     {
@@ -113,15 +117,17 @@ namespace Project3_Bank_Account
 
                     if (userInput == 1)
                     {
-                        Console.WriteLine("Please enter withdrawal amount.");
-                        WithdrawAmount = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine(checking.Withdraw());
+                       Console.WriteLine("Please enter withdrawal amount.");
+                       WithdrawAmount = Convert.ToDouble(Console.ReadLine());
+                       checking.Withdraw();
+                        Console.WriteLine(NewBalance);
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter withdrawal amount.");
                         WithdrawAmount = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine(savings.Withdraw());
+                        savings.Withdraw();
+                        Console.WriteLine(NewBalance);
                     }
                     else
                     {

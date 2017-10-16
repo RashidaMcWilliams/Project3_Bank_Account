@@ -13,13 +13,15 @@ namespace Project3_Bank_Account
 
         }
 
-        public Checking(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
+        public Checking(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount, double newBalance)
         {
             this.AcctNumber = acctNumber;
             this.AcctBalance = acctBalance;
             this.AcctType = acctType;
             this.DepositAmount = depositAmount;
             this.WithdrawAmount = withdrawAmount;
+            this.NewBalance = newBalance;
+
         }
 
         public override double DisplayBalance()
@@ -30,7 +32,7 @@ namespace Project3_Bank_Account
 
         public override double Withdraw()
         {
-            return AcctBalance - WithdrawAmount;
+            return NewBalance = (AcctBalance - WithdrawAmount);
         }
 
 

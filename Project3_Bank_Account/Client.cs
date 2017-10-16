@@ -9,7 +9,7 @@ namespace Project3_Bank_Account
     class Client
     {
         protected string name;
-        protected string addrss;
+        protected string address;
         protected string ssn;
 
         public string Name { get; set; }
