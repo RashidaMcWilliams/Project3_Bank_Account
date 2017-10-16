@@ -8,19 +8,9 @@ namespace Project3_Bank_Account
 {
     class Program
     {
-        //fields
-        protected static double depositAmount;
-        protected static double withdrawAmount;
-        private static double newBalance;
-        private static int userInput;
-        private static string userTrans;
-
-        public static double DepositAmount { get; set; }
-        public static double WithdrawAmount { get; set; }
-        public static double NewBalance { get; set; }
-
         static void Main(string[] args)
         {
+            int userInput;
             //string atm;
             do
             {
@@ -91,13 +81,13 @@ namespace Project3_Bank_Account
                     if (userInput == 1)
                     {
                         Console.WriteLine("Please enter deposit amount.");
-                        DepositAmount = Convert.ToDouble(Console.ReadLine());
+                        double DepositAmount = Convert.ToDouble(Console.ReadLine());
                         checking.Deposit(DepositAmount);
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter deposit amount.");
-                        DepositAmount = Convert.ToDouble(Console.ReadLine());
+                        double DepositAmount = Convert.ToDouble(Console.ReadLine());
                         savings.Deposit(DepositAmount);
                     }
                     else
@@ -116,14 +106,14 @@ namespace Project3_Bank_Account
                     if (userInput == 1)
                     {
                        Console.WriteLine("Please enter withdrawal amount.");
-                       WithdrawAmount = Convert.ToDouble(Console.ReadLine());
+                       double WithdrawAmount = Convert.ToDouble(Console.ReadLine());
                        checking.Withdraw(WithdrawAmount);
                         
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter withdrawal amount.");
-                        WithdrawAmount = Convert.ToDouble(Console.ReadLine());
+                        double WithdrawAmount = Convert.ToDouble(Console.ReadLine());
                         savings.Withdraw(WithdrawAmount);
                     }
                     else
@@ -149,7 +139,7 @@ namespace Project3_Bank_Account
 
                 //User input to contine/end transaction
                 Console.WriteLine("Would you like to make another transaction? Enter yes to continue.");
-                userTrans = Console.ReadLine().ToUpper();
+                string userTrans = Console.ReadLine().ToUpper();
                 if (userTrans == "YES")
                 {
                     continue;
