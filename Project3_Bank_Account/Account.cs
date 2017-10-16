@@ -23,7 +23,11 @@ namespace Project3_Bank_Account
             get { return this.DepositAmount; }
             set { this.DepositAmount = value; }
         }
-        public double WithdrawAmount { get; set; }
+        public double WithdrawAmount
+        {
+            get { return this.WithdrawAmount; }
+            set { this.WithdrawAmount = value; }
+        }
         public double NewBalance { get; set; }
 
         public Account()
@@ -44,7 +48,7 @@ namespace Project3_Bank_Account
             return AcctBalance; 
         }
 
-        public virtual void Deposit()
+        public virtual void Deposit(double DepositAmount)
         {
             NewBalance = (AcctBalance + DepositAmount); 
         }

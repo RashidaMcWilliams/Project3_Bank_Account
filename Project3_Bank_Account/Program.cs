@@ -14,7 +14,7 @@ namespace Project3_Bank_Account
         private static double newBalance;
         private static int userInput;
         private static string userTrans;
-      
+
         public static double DepositAmount { get; set; }
         public static double WithdrawAmount { get; set; }
         public static double NewBalance { get; set; }
@@ -92,15 +92,13 @@ namespace Project3_Bank_Account
                     {
                         Console.WriteLine("Please enter deposit amount.");
                         DepositAmount = Convert.ToDouble(Console.ReadLine());
-                        checking.Deposit();
-                        Console.WriteLine(NewBalance);
+                        checking.Deposit(DepositAmount);
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter deposit amount.");
                         DepositAmount = Convert.ToDouble(Console.ReadLine());
-                        savings.Deposit();
-                        Console.WriteLine(NewBalance);
+                        savings.Deposit(DepositAmount);
                     }
                     else
                     {
@@ -119,7 +117,7 @@ namespace Project3_Bank_Account
                     {
                        Console.WriteLine("Please enter withdrawal amount.");
                        WithdrawAmount = Convert.ToDouble(Console.ReadLine());
-                       Console.WriteLine(checking.Withdraw(WithdrawAmount));
+                       checking.Withdraw(WithdrawAmount);
                         
                     }
                     else if (userInput == 2)
@@ -127,7 +125,6 @@ namespace Project3_Bank_Account
                         Console.WriteLine("Please enter withdrawal amount.");
                         WithdrawAmount = Convert.ToDouble(Console.ReadLine());
                         savings.Withdraw(WithdrawAmount);
-                        Console.WriteLine(NewBalance);
                     }
                     else
                     {
