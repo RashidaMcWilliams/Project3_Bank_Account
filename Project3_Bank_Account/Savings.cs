@@ -8,6 +8,7 @@ namespace Project3_Bank_Account
 {
     class Savings : Account
     {
+        private string minimumBalance;
 
         public Savings()
         {
@@ -30,19 +31,33 @@ namespace Project3_Bank_Account
             return AcctBalance;
         }
 
-        public override double Withdraw()
+        public override void Withdraw(double withdrawAmount)
         {
-            if (AcctBalance > WithdrawAmount)
+            while (WithdrawAmount > AcctBalance)
             {
-                return NewBalance = (AcctBalance - WithdrawAmount);
+                Console.WriteLine("You can't withdraw more than $" + minimumBalance + ". Please input a new amount.");
+                WithdrawAmount = double.Parse(Console.ReadLine());
             }
-            else
-            {
-                Console.WriteLine("Insufficient funds for a withdrawal.");
-                return AcctBalance;
-            }
-            
+            AcctBalance -= WithdrawAmount;
         }
+
+        public override void Deposit(double depositAmount)
+        {
+            AcctBalance += DepositAmount;
+        }
+
+        //{
+        //    if (AcctBalance > WithdrawAmount)
+        //    {
+        //        return NewBalance = (AcctBalance - WithdrawAmount);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Insufficient funds for a withdrawal.");
+        //        return AcctBalance;
+        //    }
+
+        //}
 
     }
 }

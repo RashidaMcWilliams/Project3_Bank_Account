@@ -30,9 +30,10 @@ namespace Project3_Bank_Account
             return AcctBalance;
         }
 
-        public override double Withdraw()
+        public override void Withdraw(double withdrawAmount)
         {
-            return NewBalance = (AcctBalance - WithdrawAmount);
+            //return NewBalance = (AcctBalance - WithdrawAmount);
+            AcctBalance = AcctBalance - WithdrawAmount;
         }
 
 

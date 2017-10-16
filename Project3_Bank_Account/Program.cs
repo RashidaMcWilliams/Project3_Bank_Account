@@ -119,14 +119,14 @@ namespace Project3_Bank_Account
                     {
                        Console.WriteLine("Please enter withdrawal amount.");
                        WithdrawAmount = Convert.ToDouble(Console.ReadLine());
-                       checking.Withdraw();
-                        Console.WriteLine(NewBalance);
+                       Console.WriteLine(checking.Withdraw(WithdrawAmount));
+                        
                     }
                     else if (userInput == 2)
                     {
                         Console.WriteLine("Please enter withdrawal amount.");
                         WithdrawAmount = Convert.ToDouble(Console.ReadLine());
-                        savings.Withdraw();
+                        savings.Withdraw(WithdrawAmount);
                         Console.WriteLine(NewBalance);
                     }
                     else
