@@ -8,6 +8,10 @@ namespace Project3_Bank_Account
 {
     class Savings : Account
     {
+        protected double newBalance;
+
+        public double NewBalance { get; set; }
+
         public Savings()
         {
 
@@ -15,29 +19,29 @@ namespace Project3_Bank_Account
 
         public Savings(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
         {
-            this.acctNumber = acctNumber;
-            this.acctBalance = acctBalance;
-            this.acctType = acctType;
-            this.depositAmount = depositAmount;
-            this.withdrawAmount = withdrawAmount;
+            this.AcctNumber = acctNumber;
+            this.AcctBalance = acctBalance;
+            this.AcctType = acctType;
+            this.DepositAmount = depositAmount;
+            this.WithdrawAmount = withdrawAmount;
         }
 
         public override double DisplayBalance()
         {
-            Console.WriteLine(acctType + "\n" + acctNumber);
-            base.DisplayBalance();
+            Console.WriteLine("Savings balance: ");
+            return AcctBalance;
         }
 
         public override double Withdraw()
         {
-            if (acctBalance > withdrawAmount)
+            if (AcctBalance > WithdrawAmount)
             {
-                return acctBalance - withdrawAmount;
+                return newBalance = (AcctBalance - WithdrawAmount);
             }
             else
             {
                 Console.WriteLine("Insufficient funds for a withdrawal.");
-                return acctBalance;
+                return AcctBalance;
             }
             
         }

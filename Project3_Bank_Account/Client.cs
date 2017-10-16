@@ -8,9 +8,9 @@ namespace Project3_Bank_Account
 {
     class Client
     {
-        private string name;
-        private string address;
-        private string ssn;
+        protected string name;
+        protected string addrss;
+        protected string ssn;
 
         public string Name { get; set; }
         public string Address { get; set; }
@@ -23,14 +23,14 @@ namespace Project3_Bank_Account
 
         public Client(string name, string address, string ssn)
         {
-            this.name = name;
-            this.address = address;
-            this.ssn = ssn;
+            this.Name = name;
+            this.Address = address;
+            this.Ssn = ssn;
         }
 
         public virtual string ClientInfo()
         {
-            return name + "\n" + address + "\n" + ssn;
+            return Name + "\n" + Address + "\n" + Ssn;
         }
 
     }

@@ -15,22 +15,22 @@ namespace Project3_Bank_Account
 
         public Checking(string acctNumber, double acctBalance, string acctType, double depositAmount, double withdrawAmount)
         {
-            this.acctNumber = acctNumber;
-            this.acctBalance = acctBalance;
-            this.acctType = acctType;
-            this.depositAmount = depositAmount;
-            this.withdrawAmount = withdrawAmount;
+            this.AcctNumber = acctNumber;
+            this.AcctBalance = acctBalance;
+            this.AcctType = acctType;
+            this.DepositAmount = depositAmount;
+            this.WithdrawAmount = withdrawAmount;
         }
 
         public override double DisplayBalance()
         {
-            Console.WriteLine(acctType + "\n " + acctNumber);
-            base.DisplayBalance();
+            Console.WriteLine("Checking balance: ");
+            return AcctBalance;
         }
 
         public override double Withdraw()
         {
-            return acctBalance - withdrawAmount;
+            return AcctBalance - WithdrawAmount;
         }
 
 

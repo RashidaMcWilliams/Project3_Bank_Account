@@ -27,19 +27,19 @@ namespace Project3_Bank_Account
 
         public Account(string acctNumber, double acctBalance, string acctType)
         {
-            this.acctNumber = acctNumber;
-            this.acctBalance = acctBalance;
-            this.acctType = acctType;
+            this.AcctNumber = acctNumber;
+            this.AcctBalance = acctBalance;
+            this.AcctType = acctType;
         }
 
         public virtual double DisplayBalance()
         {
-            return acctBalance; 
+            return AcctBalance; 
         }
 
         public virtual double Deposit()
         {
-            return acctBalance + depositAmount;
+            return AcctBalance + DepositAmount;
         }
 
         public abstract double Withdraw();
